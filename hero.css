@@ -1303,6 +1303,15 @@ img[alt*="Klinsheet App Mockups"] {
     flex: 0 1 calc(50% - 1rem); /* Displays 2 logos per row on smaller mobile devices */
   }
 }
+/* Footer Base Background & Colors */
+.site-footer {
+  background-color: #0b7b99; /* Exact teal color from design */
+  color: #ffffff;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  font-family: inherit;
+}
+
 /* Horizontal Dividers */
 .footer-divider {
   border-color: rgba(255, 255, 255, 0.25);
@@ -1321,9 +1330,7 @@ img[alt*="Klinsheet App Mockups"] {
   font-size: 0.95rem;
   line-height: 1.4;
 }
-.newsletter-text h3{
-color: #ffffff;
-}
+
 .newsletter-input {
   max-width: 380px;
   height: 48px;
@@ -1357,7 +1364,6 @@ color: #ffffff;
 .footer-logo {
   max-height: 45px;
   width: auto;
-  filter: brightness(0) invert(1); /* Makes the logo white if SVG/transparent, or remove filter if image is already white */
 }
 
 .footer-description {
@@ -1366,22 +1372,53 @@ color: #ffffff;
   line-height: 1.6;
 }
 
+/* Security Shield & QR Scan Box Styles */
+.footer-badge-shield img {
+  height: 55px;
+  width: auto;
+}
+
+.footer-qr-box {
+  background: #ffffff;
+  padding: 4px;
+  border-radius: 6px;
+  display: inline-flex;
+}
+
+.footer-qr-box img {
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+}
+.footer-qr-box img {
+  height: 80px; /* Increased from 50px */
+  width: 80px;  /* Increased from 50px */
+  object-fit: contain;
+}
+.footer-badge-shield img{
+   height: 90px; /* Increased from 50px */
+  width: 90px;  /* Increased from 50px */
+  object-fit: contain;
+
+}
+
 /* Social Icon Boxes */
 .social-box {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   background-color: #f26522;
   color: #ffffff;
   border-radius: 4px;
   text-decoration: none;
   font-size: 1rem;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .social-box:hover {
+  background-color: #d95316;
   color: #ffffff;
   transform: translateY(-2px);
 }
@@ -2610,122 +2647,130 @@ color: #ffffff;
     }
 
 /* Footer Base Background & Colors */
- footer {
-      background-color: var(--teal-bg);
-      color: #ffffff;
-      padding: 60px 8% 20px 8%;
-    }
+.site-footer {
+  background-color: #0b7b99; /* Exact teal color from image */
+  color: #ffffff;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  font-family: inherit;
+}
 
-    .newsletter {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      padding-bottom: 40px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+/* Horizontal Dividers */
+.footer-divider {
+  border-color: rgba(255, 255, 255, 0.25);
+  opacity: 1;
+}
 
-    .newsletter-text h3 {
-      font-size: 20px;
-      margin-bottom: 6px;
-    }
+/* Newsletter Styles */
+.newsletter-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #ffffff;
+}
 
-    .newsletter-text p {
-      font-size: 12px;
-      opacity: 0.8;
-    }
+.newsletter-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
 
-    .newsletter-form {
-      display: flex;
-      gap: 8px;
-    }
+.newsletter-input {
+  max-width: 380px;
+  height: 48px;
+  border-radius: 4px;
+  border: none;
+  padding-left: 1rem;
+  font-size: 0.95rem;
+}
 
-    .newsletter-form input {
-      padding: 10px 16px;
-      border-radius: 4px;
-      border: none;
-      width: 260px;
-      outline: none;
-    }
+.newsletter-input::placeholder {
+  color: #b0b0b0;
+}
 
-    .footer-content {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 40px;
-    }
+.btn-newsletter {
+  background-color: #f26522; /* Brand orange color */
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0 1.75rem;
+  height: 48px;
+  border-radius: 6px;
+  border: none;
+  transition: background-color 0.2s ease;
+}
 
-    .footer-col h4 {
-      font-size: 14px;
-      margin-bottom: 16px;
-      color: #ffffff;
-    }
+.btn-newsletter:hover {
+  background-color: #d95316;
+  color: #ffffff;
+}
 
-    .footer-col ul {
-      list-style: none;
-    }
+/* Logo & Content */
+.footer-logo {
+  max-height: 45px;
+  width: auto;
+  filter: brightness(0) invert(1); /* Makes the logo white if SVG/transparent, or remove filter if image is already white */
+}
 
-    .footer-col ul li {
-      font-size: 12px;
-      opacity: 0.8;
-      margin-bottom: 8px;
-    }
+.footer-description {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
 
-    .footer-badges-row {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
+/* Social Icon Boxes */
+.social-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #f26522;
+  color: #ffffff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
 
-    /* Footer Bottom Container with Border Line & Overlapping Social Icons */
-    .footer-bottom-container {
-      position: relative;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      padding-top: 30px;
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+.social-box:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
 
-    .social-wrapper {
-      position: absolute;
-      top: -16px; /* Pulls icons upward to sit precisely centered on the border line */
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 12px;
-    }
+/* Link Columns */
+.footer-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+}
 
-    .social-box {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      background-color: var(--orange-btn);
-      color: #ffffff;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
 
-    .social-box:hover {
-      color: #ffffff;
-      background-color: #d95328;
-      transform: translateY(-2px);
-    }
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
 
-    .footer-bottom {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      font-size: 11px;
-      opacity: 0.6;
-    }
+.footer-links a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Bottom Bar */
+.footer-bottom-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.88rem;
+}
 
     /* DOWNLOAD APP SECTION */
     .download-app-section {
@@ -2942,4 +2987,486 @@ color: #ffffff;
 
 .svg-mask-def {
   position: absolute;
+}
+
+/* ============================================================
+   FINAL TYPOGRAPHY + MOBILE RESPONSIVE OVERRIDES
+   Added to improve readability without changing the page content.
+============================================================ */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  font-weight: 500;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6,
+.hero-title, .section-title, .download-title,
+.newsletter-title, .footer-heading, .stat-number {
+  font-weight: 800 !important;
+}
+
+.navbar-nav .nav-link,
+.dropdown-menu-glass .dropdown-item,
+.btn, button,
+.service-item h6,
+.how-step h5,
+.hr-card-body h3,
+.accordion-button,
+.testimonial-author strong,
+.blog-card h5,
+.industry-card span,
+.footer-links a {
+  font-weight: 700;
+}
+
+p, .service-item p, .how-step p, .download-text,
+.hr-card-body p, .testimonial-text, .blog-card p,
+.footer-description, .newsletter-text {
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+img, video, iframe {
+  max-width: 100%;
+}
+
+/* Tablet and smaller laptops */
+@media (max-width: 991.98px) {
+  .navbar .container-fluid {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .navbar-collapse {
+    padding-top: 14px;
+  }
+
+  .navbar-nav {
+    align-items: stretch;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 4px;
+  }
+
+  .dropdown-menu-glass {
+    width: 100% !important;
+    min-width: 0;
+    padding: 12px !important;
+  }
+
+  .dropdown-menu-glass .dropdown-item {
+    white-space: normal !important;
+  }
+
+  .hero-section {
+    padding-top: 3rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 2.6rem);
+    line-height: 1.15;
+    padding: 0 14px;
+  }
+
+  .hero-person {
+    width: min(100%, 480px);
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+  }
+
+  .about-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding: 32px 22px !important;
+    margin: 24px 0 !important;
+  }
+
+  .about-intro-img,
+  .about-intro-text {
+    width: 100%;
+    max-width: 680px;
+  }
+
+  .about-intro-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .services-section .row,
+  .how-it-works-section .row {
+    row-gap: 28px;
+  }
+
+  .hr-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hr-card-img-wrap,
+  .hr-card-img {
+    height: 280px !important;
+  }
+
+  .stats-row-flex {
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .stats-col-text,
+  .stats-col-grid {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* Phones */
+@media (max-width: 767.98px) {
+  .container,
+  .container-fluid {
+    --bs-gutter-x: 1.5rem;
+  }
+
+  section {
+    scroll-margin-top: 78px;
+  }
+
+  .py-lg-6 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-section {
+    padding-top: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.7rem, 7vw, 2.25rem);
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+  }
+
+  .hero-title br {
+    display: none;
+  }
+
+  .hero-visual {
+    margin-top: 1.5rem;
+  }
+
+  .hero-person {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+
+  .hero-store-badges {
+    position: static;
+    transform: none;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 12px 18px;
+  }
+
+  .store-badge {
+    min-width: 0;
+    width: min(100%, 210px);
+    height: 54px;
+    padding: 8px 12px;
+    border-radius: 12px;
+  }
+
+  .store-badge .badge-text small {
+    font-size: 11px;
+  }
+
+  .store-badge .badge-text strong {
+    font-size: 14px;
+  }
+
+  .about-intro {
+    padding: 26px 18px !important;
+    gap: 20px;
+  }
+
+  .about-intro-text h2,
+  .section-title,
+  .hr-solutions-section h1,
+  .industries-section h2 {
+    font-size: clamp(1.45rem, 6vw, 1.9rem);
+    line-height: 1.25;
+  }
+
+  .about-intro-text p,
+  .service-item p,
+  .how-step p,
+  .download-text,
+  .hr-card-body p,
+  .testimonial-text,
+  .blog-card p {
+    font-size: 0.92rem;
+  }
+
+  .services-section,
+  .how-it-works-section,
+  .insight-section,
+  .testimonial-section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .service-item h6 {
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
+  .service-item h6 img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    flex: 0 0 22px;
+  }
+
+  .laptop-mockup {
+    max-width: 100%;
+  }
+
+  .download-app-section {
+    padding: 25px 0;
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .download-app-card {
+    border-radius: 18px;
+    padding: 30px 18px;
+    gap: 18px;
+  }
+
+  .download-app-content {
+    margin-bottom: 0;
+  }
+
+  .download-title {
+    font-size: clamp(1.8rem, 8vw, 2.3rem);
+    line-height: 1.15;
+  }
+
+  .download-text {
+    max-width: 100%;
+    margin-bottom: 22px;
+  }
+
+  .store-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .store-buttons .store-badge {
+    width: auto;
+    min-width: 150px;
+    justify-content: center;
+  }
+
+  .download-app-phones {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    max-width: 300px;
+    margin: 12px auto 0;
+  }
+
+  .phones-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .step-image-frame {
+    height: clamp(220px, 65vw, 340px);
+  }
+
+  .how-step {
+    margin-bottom: 1.25rem;
+  }
+
+  .hr-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hr-card-img-wrap,
+  .hr-card-img {
+    height: auto !important;
+    max-height: 300px;
+    min-height: 190px;
+  }
+
+  .hr-card-img {
+    object-fit: contain;
+  }
+
+  .stats-card {
+    padding: 22px 16px !important;
+    border-radius: 18px;
+  }
+
+  .stats-row-flex {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 24px;
+  }
+
+  .stats-heading {
+    font-size: 1.8rem;
+  }
+
+  .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .stat-box {
+    min-height: 135px;
+    padding: 20px 14px;
+    border-radius: 14px;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.82rem;
+  }
+
+  .faq-section {
+    padding: 2.5rem 0 !important;
+  }
+
+  .faq-contact-card {
+    margin-top: 24px !important;
+  }
+
+  .accordion-button {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .accordion-body {
+    font-size: 0.88rem;
+    line-height: 1.65;
+  }
+
+  .testimonial-card {
+    height: auto;
+  }
+
+  .industry-card {
+    flex: 0 0 220px;
+  }
+
+  .industry-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+  }
+
+  .blog-card {
+    height: auto;
+  }
+
+  .blog-card h5 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+  }
+
+  .newsletter-title {
+    font-size: 1.5rem;
+  }
+
+  .site-footer {
+    padding-top: 2.5rem;
+  }
+
+  .site-footer form {
+    flex-direction: column;
+  }
+
+  .newsletter-input,
+  .btn-newsletter {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .site-footer .row > [class*="col-"] {
+    min-width: 0;
+  }
+
+  .footer-links a {
+    font-size: 0.82rem;
+    overflow-wrap: anywhere;
+  }
+
+  .footer-bottom-text {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .navbar-brand .logo-img {
+    max-width: 145px;
+    height: auto;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-store-badges {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .store-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .store-buttons .store-badge {
+    width: 100%;
+  }
+
+  .stat-grid {
+    gap: 9px;
+  }
+
+  .stat-box {
+    padding: 16px 10px;
+  }
+
+  .stat-number {
+    font-size: 1.7rem;
+  }
+
+  .site-footer .row.g-4 > .col-4 {
+    width: 100%;
+  }
 }
