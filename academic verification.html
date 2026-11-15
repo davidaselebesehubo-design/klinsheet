@@ -329,7 +329,6 @@
     }
 
     /* Section 5: Newsletter & Footer */
-     /* Footer Section */
     footer {
       background-color: var(--teal-bg);
       color: #ffffff;
@@ -355,6 +354,7 @@
     .newsletter-text p {
       font-size: 12px;
       opacity: 0.8;
+      margin: 0;
     }
 
     .newsletter-form {
@@ -369,6 +369,102 @@
       width: 260px;
       outline: none;
     }
+    /* Newsletter Styles */
+.newsletter-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.newsletter-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.newsletter-input {
+  max-width: 380px;
+  height: 48px;
+  border-radius: 4px;
+  border: none;
+  padding-left: 1rem;
+  font-size: 0.95rem;
+}
+
+.newsletter-input::placeholder {
+  color: #b0b0b0;
+}
+
+.btn-newsletter {
+  background-color: #f26522; /* Brand orange color */
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0 1.75rem;
+  height: 48px;
+  border-radius: 6px;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-newsletter:hover {
+  background-color: green;
+  color: #ffffff;
+}
+
+    .social-wrapper {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .social-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background-color: #f1683a;
+      color: #ffffff;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .social-box:hover {
+      color: #ffffff;
+      background-color: #d95328;
+      transform: translateY(-2px);
+    }
+    /* Security Shield & QR Scan Box Styles */
+.footer-badge-shield img {
+  height: 55px;
+  width: auto;
+}
+
+.footer-qr-box {
+  background: #ffffff;
+  padding: 4px;
+  border-radius: 6px;
+  display: inline-flex;
+}
+
+.footer-qr-box img {
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+}
+.footer-qr-box img {
+  height: 120px; /* Increased from 50px */
+  width: 120px;  /* Increased from 50px */
+  object-fit: contain;
+}
+.footer-badge-shield img{
+   height: 120px; /* Increased from 50px */
+  width: 120px;  /* Increased from 50px */
+  object-fit: contain;
+
+}
 
     .footer-content {
       display: grid;
@@ -384,6 +480,7 @@
 
     .footer-col ul {
       list-style: none;
+      padding: 0;
     }
 
     .footer-col ul li {
@@ -392,59 +489,44 @@
       margin-bottom: 8px;
     }
 
-    .footer-badges-row {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-
-    /* Footer Bottom Container with Border Line & Overlapping Social Icons */
-    .footer-bottom-container {
-      position: relative;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      padding-top: 30px;
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .social-wrapper {
-      position: absolute;
-      top: -16px; /* Pulls icons upward to sit precisely centered on the border line */
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 12px;
-    }
-
-    .social-box {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      background-color: var(--orange-btn);
-      color: #ffffff;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-
-    .social-box:hover {
-      color: #ffffff;
-      background-color: #d95328;
-      transform: translateY(-2px);
-    }
-
     .footer-bottom {
-      width: 100%;
       display: flex;
       justify-content: space-between;
       font-size: 11px;
       opacity: 0.6;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
     }
+    /* Link Columns */
+.footer-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+}
+
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 
     /* Responsive */
     @media (max-width: 768px) {
@@ -452,6 +534,266 @@
       .hero-title { font-size: 32px; }
       .newsletter-form input { width: 100%; }
     }
+
+    /* Global typography: make all page text bold */
+    body, body * {
+      font-weight: 700 !important;
+    }
+
+    /* Keep form controls readable and consistent */
+    input, button, select, textarea {
+      font-weight: 700 !important;
+      max-width: 100%;
+    }
+
+    /* Prevent wide content from causing horizontal scrolling */
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Improved tablet and mobile layout */
+    @media (max-width: 991.98px) {
+      .navbar-custom {
+        padding: 10px 0;
+      }
+
+      .navbar-collapse {
+        padding: 12px 0 8px;
+      }
+
+      .navbar-nav {
+        width: 100%;
+      }
+
+      .nav-link-custom {
+        padding: 10px 12px !important;
+      }
+
+      .dropdown-menu-glass {
+        width: 100% !important;
+        min-width: 0;
+        max-width: 100%;
+        padding: 14px !important;
+      }
+
+      .dropdown-menu-glass .dropdown-item {
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+      }
+
+      .about-section {
+        gap: 32px;
+      }
+
+      .about-image-wrapper,
+      .about-content {
+        min-width: 0;
+        width: 100%;
+      }
+
+      .newsletter {
+        align-items: flex-start;
+      }
+
+      .newsletter-form {
+        width: 100%;
+      }
+
+      .newsletter-form input {
+        min-width: 0;
+        flex: 1;
+      }
+
+      .footer-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .hero-section,
+      .about-section,
+      .verify-section,
+      .why-section,
+      footer {
+        padding: 44px 5%;
+      }
+
+      .hero-title {
+        font-size: clamp(28px, 8vw, 36px);
+        line-height: 1.2;
+      }
+
+      .about-section {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .about-image-placeholder {
+        max-width: 100%;
+      }
+
+      .about-content p br,
+      .feature-item p br,
+      .card-custom p br,
+      .why-section h2 br {
+        display: none;
+      }
+
+      .about-content p,
+      .feature-item p,
+      .card-custom p {
+        font-size: 14px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .feature-item p {
+        padding-left: 30px;
+      }
+
+      .verify-section h2,
+      .why-section h2 {
+        font-size: 24px;
+        line-height: 1.3;
+        margin-bottom: 28px;
+      }
+
+      .cards-grid-3,
+      .cards-grid-4 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .card-custom {
+        padding: 20px;
+      }
+
+      .newsletter {
+        padding-bottom: 28px;
+        margin-bottom: 28px;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .newsletter-form input,
+      .newsletter-form button {
+        width: 100%;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px 16px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 12px;
+      }
+
+      .footer-bottom p {
+        margin: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .btn-orange {
+        max-width: 100%;
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+
+      .badge-custom {
+        font-size: 10px;
+        letter-spacing: 0.5px;
+      }
+
+      .hero-title {
+        font-size: 28px;
+      }
+    }
+
+
+    /* Larger, bold typography across the entire page */
+    body {
+      font-size: 18px;
+      font-weight: 700 !important;
+    }
+
+    body p, body li, body a, body label, body input, body button,
+    body .nav-link-custom, body .dropdown-item {
+      font-size: 17px;
+      font-weight: 700 !important;
+      line-height: 1.6;
+    }
+
+    body .hero-title {
+      font-size: clamp(34px, 4.2vw, 48px);
+      font-weight: 800 !important;
+      line-height: 1.2;
+    }
+
+    body h2 {
+      font-size: clamp(28px, 3vw, 36px);
+      font-weight: 800 !important;
+      line-height: 1.25;
+    }
+
+    body h3 { font-size: 23px; font-weight: 800 !important; }
+
+    body h4, body .feature-item h4, body .footer-col h4 {
+      font-size: 18px;
+      font-weight: 800 !important;
+    }
+
+    body .badge-custom { font-size: 13px; font-weight: 800 !important; }
+    body .card-custom h3 { font-size: 19px; }
+
+    body .card-custom p, body .feature-item p, body .newsletter-text p,
+    body .footer-col ul li, body .footer-bottom {
+      font-size: 16px;
+      font-weight: 700 !important;
+    }
+
+    body .btn-orange { font-size: 16px; font-weight: 800 !important; }
+
+    @media (max-width: 767.98px) {
+      body { font-size: 17px; }
+
+      body p, body li, body a, body label, body input, body button,
+      body .nav-link-custom, body .dropdown-item {
+        font-size: 16px;
+      }
+
+      body .hero-title { font-size: clamp(30px, 8vw, 38px); }
+      body h2 { font-size: 27px; }
+      body h3 { font-size: 21px; }
+      body h4, body .feature-item h4, body .footer-col h4 { font-size: 17px; }
+      body .card-custom h3 { font-size: 18px; }
+
+      body .card-custom p, body .feature-item p, body .newsletter-text p,
+      body .footer-col ul li, body .footer-bottom { font-size: 15px; }
+
+      body .badge-custom { font-size: 12px; }
+    }
+
   </style>
 </head>
 <body>
@@ -639,82 +981,107 @@
   </section>
 
   <!-- FOOTER -->
- <footer>
-    <div class="newsletter">
-      <div class="newsletter-text">
-        <h3>Subscribe to our newsletter</h3>
-        <p>Join our newsletter to stay up to date on feature and releases.</p>
+  <footer id="contact" class="site-footer">
+  <div class="container">
+    
+    <!-- Newsletter Section -->
+    <div class="row align-items-center pb-5 pt-2">
+      <div class="col-lg-6 mb-3 mb-lg-0">
+        <h3 class="newsletter-title mb-2">Subscribe to our newsletter</h3>
+        <p class="newsletter-text mb-0">Join our newsletter to stay up to date<br>on feature and releases.</p>
       </div>
-      <form class="newsletter-form" onsubmit="event.preventDefault();">
-        <input type="email" placeholder="youremail@gmail.com">
-        <button class="btn btn-orange">Join</button>
-      </form>
+      <div class="col-lg-6">
+        <form class="d-flex gap-2 justify-content-lg-end">
+          <input type="email" class="form-control newsletter-input" placeholder="youremail@gmail.com" required>
+          <button type="submit" class="btn btn-newsletter">Join</button>
+        </form>
+      </div>
     </div>
 
-    <div class="footer-content">
-      <div class="footer-col">
-        <div class="logo" style="margin-bottom: 12px;"><img src="images/klinsheet logo 1.png" alt="Klinsheet Logo"></div>
-        <p style="font-size: 12px; opacity: 0.8; max-width: 280px; margin-bottom: 20px;">We deliver exceptional value to our clients in the area of Background Check services, Recruitment, Training, Business Advisory and Outsourcing.</p>
+    <hr class="footer-divider mb-5">
+
+    <!-- Main Footer Links Section -->
+    <div class="row g-4 pb-4">
+      <div class="col-lg-5 pe-lg-5">
+        <a class="navbar-brand d-inline-block mb-3" href="#home">
+          <img src="images/klinsheet logo 1.png" alt="Klinsheet Consulting Limited" class="">
+        </a>
+        <p class="footer-description">We deliver exceptional value to our clients in the area of Background Check services, Recruitment, Training, Business Advisory and Outsourcing.</p>
         
-        <!-- Badges & QR Code side-by-side -->
-        <div class="footer-badges-row">
-          <img src="images/badge-placeholder.png" alt="Security Badge" style="height: 100px; width: auto;">
-          <img src="images/qr-placeholder.png" alt="QR Code" style="height: 90px; width:auto; border-radius: 4px;">
+        <!-- Badges & Scan Box Section -->
+        <div class="d-flex align-items-center gap-3 mt-4">
+          <div class="footer-badge-shield">
+            <img src="images/badge-placeholder.png" alt="Security Shield" class="img-fluid">
+          </div>
+          <div class="footer-qr-box">
+            <img src="images/qr-placeholder.png" alt="Scan QR Code" class="">
+          </div>
         </div>
       </div>
 
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li>Academic</li>
-          <li>NYSC</li>
-          <li>Guarantor</li>
-          <li>Address</li>
-          <li>Credit</li>
-          <li>Criminal</li>
-          <li>Previous Employee</li>
-        </ul>
-      </div>
+       <div class="col-lg-7">
+        <div class="row g-4">
+          <div class="col-4">
+            <h6 class="footer-heading">Services</h6>
+            <ul class="footer-links">
+              <li><a href="#services">Academic</a></li>
+              <li><a href="#services">NYSC</a></li>
+              <li><a href="#services">Guarantor</a></li>
+              <li><a href="#services">Address</a></li>
+              <li><a href="#services">Credit</a></li>
+              <li><a href="#services">Criminal</a></li>
+              <li><a href="#services">Previous Employee</a></li>
+            </ul>
+          </div>
 
-      <div class="footer-col">
-        <h4>Quicklinks</h4>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Service</li>
-          <li>Background Check</li>
-          <li>Contact</li>
-        </ul>
-      </div>
+          <div class="col-4">
+            <h6 class="footer-heading">Quicklinks</h6>
+            <ul class="footer-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Service</a></li>
+              <li><a href="#contact">Background Check</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
 
-      <div class="footer-col">
-        <h4>Help</h4>
-        <ul>
-          <li>Terms of Use</li>
-          <li>Privacy Policy</li>
-          <li>Manage Cookies</li>
-          <li>Careers</li>
-          <li>Whatsapp</li>
-        </ul>
+          <div class="col-4">
+            <h6 class="footer-heading">Help</h6>
+            <ul class="footer-links">
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Manage Cookies</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Whatsapp</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Bottom Container with Social Icons overlapping the border -->
-    <div class="footer-bottom-container">
-      <div class="social-wrapper">
-        <a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="social-box"><i class="bi bi-whatsapp"></i></a>
-        <a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 klinsheet Consulting Ltd. All rights reserved.</p>
-        <p>51 Okota Rd, Inside abbey microfinance bank.</p>
+    <!-- Centered Social Icons Row -->
+    <div class="row justify-content-center py-3">
+      <div class="col-auto">
+        <div class="d-flex gap-2">
+          <a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-box"><i class="bi bi-whatsapp"></i></a>
+          <a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
+        </div>
       </div>
     </div>
-  </footer>
 
-  <!-- Bootstrap 5 JavaScript Bundle CDN -->
+    <hr class="footer-divider mb-0">
+
+    <!-- Bottom Copyright Section -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-4 gap-2 footer-bottom-text">
+      <p class="mb-0">&copy; 2026 Klinsheet Consulting Ltd. All rights reserved</p>
+      <p class="mb-0">51 Okota Rd, Inside abbey microfinance bank.</p>
+    </div>
+
+  </div>
+</footer>
+  <!-- Bootstrap 5 Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

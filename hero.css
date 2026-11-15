@@ -2702,7 +2702,20 @@ img[alt*="Klinsheet App Mockups"] {
   background-color: #d95316;
   color: #ffffff;
 }
+/* Base button styles (optional transitions for a smooth effect) */
+.btn-newsletter {
+  background-color: #f26522; /* Your current button background color */
+  color: #ffffff;          /* Text color */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
 
+/* Green hover state */
+.btn-newsletter:hover {
+  background-color: #28a745; /* Change background to green */
+  color: #ffffff;          /* Keep text readable */
+}
 /* Logo & Content */
 .footer-logo {
   max-height: 45px;
@@ -3468,5 +3481,13 @@ img, video, iframe {
 
   .site-footer .row.g-4 > .col-4 {
     width: 100%;
+  }
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 767.98px) {
+  .mv-card {
+    flex-direction: column;
+    text-align: center;
   }
 }

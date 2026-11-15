@@ -1102,6 +1102,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.75rem 1.6rem;
   border: none;
 }
+
 /* Footer Base Background & Colors */
 .site-footer {
   background-color: #0b7b99; /* Exact teal color from image */
@@ -1155,7 +1156,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-newsletter:hover {
-  background-color: #d6551b;
+  background-color: green;
   color: #ffffff;
 }
 
@@ -1163,7 +1164,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer-logo {
   max-height: 45px;
   width: auto;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1); /* Makes the logo white if SVG/transparent, or remove filter if image is already white */
 }
 
 .footer-description {
@@ -1171,21 +1172,34 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.92rem;
   line-height: 1.6;
 }
-
-/* Footer Badges (Shield & QR Code) */
-.footer-badge-shield {
-  height: 60px;
+/* Security Shield & QR Scan Box Styles */
+.footer-badge-shield img {
+  height: 55px;
   width: auto;
-  object-fit: contain;
 }
 
-.footer-badge-qr {
-  height: 60px;
-  width: 60px;
+.footer-qr-box {
   background: #ffffff;
   padding: 4px;
   border-radius: 6px;
+  display: inline-flex;
+}
+
+.footer-qr-box img {
+  height: 50px;
+  width: 50px;
   object-fit: contain;
+}
+.footer-qr-box img {
+  height: 120px; /* Increased from 50px */
+  width: 120px;  /* Increased from 50px */
+  object-fit: contain;
+}
+.footer-badge-shield img{
+   height: 120px; /* Increased from 50px */
+  width: 120px;  /* Increased from 50px */
+  object-fit: contain;
+
 }
 
 /* Social Icon Boxes */
@@ -1193,18 +1207,17 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   background-color: #f26522;
   color: #ffffff;
   border-radius: 4px;
   text-decoration: none;
-  font-size: 1.1rem;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
 }
 
 .social-box:hover {
-  background-color: #d6551b;
   color: #ffffff;
   transform: translateY(-2px);
 }
