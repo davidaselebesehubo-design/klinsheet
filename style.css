@@ -1,168 +1,235 @@
 /* =============================================================
-   KLINSHEET CONSULTING LIMITED — LANDING PAGE STYLES
+   KLINSHEET CONSULTING LIMITED — HOME PAGE STYLES
    ============================================================= */
 
 :root {
-  --klin-orange: #E06B3E;
-  --klin-orange-dark: #C85A2E;
-  --klin-navy-text: #17202A;
-  --klin-body-text: #5B6472;
-  --klin-teal: #0C6E93;
-  --klin-teal-dark: #0A5A7A;
-  --klin-sage: #DCE4D3;
-  --klin-sage-dark: #C4D0B7;
-  --klin-green-1: #6FA07E;
-  --klin-green-2: #4C7D63;
-  --klin-bg-light: #F7F8FB;
-
-  --font-display: 'Baloo 2', 'Inter', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --teal-bg: #007696;
+  --klin-teal: #007696;
+  --klin-orange: #f1683a;
+  --orange-btn: #f1683a;
+  --green-bg: #80c2a6;
+  --green-light: #edf6f2;
+  --teal-light: #e8f3f6;
+  --klin-bg-light: #f8fafc;
+  --klin-navy-text: #111111;
+  --klin-body-text: #444444;
+  --light-badge-bg: rgba(255, 255, 255, 0.2);
+  --badge-orange-bg: #fdeee9;
+  --badge-orange-text: #f1683a;
+  --card-white: #ffffff;
 }
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 body {
-  font-family: var(--font-body);
-  color: var(--klin-body-text);
-  overflow-x: hidden;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  color: var(--klin-navy-text);
+  color: #1a1a1a;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.65;
+  background-color: #ffffff;
+  padding-top: 80px;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
-section {
-  position: relative;
+img, video, iframe {
+  max-width: 100%;
 }
 
-.py-lg-6 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+h1, h2, h3, h4, h5, h6,
+.hero-title, .section-title, .download-title,
+.newsletter-title, .footer-heading, .stat-number {
+  font-weight: 800 !important;
 }
 
-/* =============================================================
-   BUTTONS
-   ============================================================= */
-.btn-brand-orange {
-  background-color: var(--klin-orange);
-  border: 1px solid var(--klin-orange);
-  color: #fff;
-  transition: all .2s ease-in-out;
-}
-
-.btn-brand-orange:hover,
-.btn-brand-orange:focus {
-  background-color: var(--klin-orange-dark);
-  border-color: var(--klin-orange-dark);
-  color: #fff;
-}
-
-/* =============================================================
-   NAVBAR
-   ============================================================= */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-}
-
-.brand-icon {
-  font-size: 1.8rem;
-  color: var(--klin-orange);
-}
-
-.brand-text {
-  font-family: var(--font-display);
+.navbar-nav .nav-link,
+.dropdown-menu-glass .dropdown-item,
+.btn, button,
+.service-item h6,
+.how-step h5,
+.hr-card-body h3,
+.accordion-button,
+.testimonial-author strong,
+.blog-card h5,
+.industry-card span,
+.footer-links a {
   font-weight: 700;
-  font-size: 1.3rem;
-  color: var(--klin-navy-text);
-  line-height: 1.1;
 }
 
-.brand-text small {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 0.6rem;
+p, .service-item p, .how-step p, .download-text,
+.hr-card-body p, .testimonial-text, .blog-card p,
+.footer-description, .newsletter-text {
   font-weight: 500;
-  letter-spacing: 0.06em;
-  color: var(--klin-teal);
-  text-transform: uppercase;
-}
-
-.navbar-nav .nav-link {
-  font-weight: 600;
-  color: var(--klin-navy-text);
-  padding: 0.4rem 0.2rem;
-}
-
-.navbar-nav .nav-link.active,
-.navbar-nav .nav-link:hover {
-  color: var(--klin-orange);
+  line-height: 1.7;
 }
 
 /* =============================================================
-   SECTION HEADERS
+   NAVBAR & DROPDOWN
    ============================================================= */
-.section-eyebrow {
+.navbar-custom {
+  background-color: #ffffff;
+  padding: 16px 0;
+  z-index: 1030;
+}
+
+.navbar-brand img {
+  max-height: 48px;
+  width: auto;
+  display: block;
+}
+
+.nav-link-custom {
+  color: #111111 !important;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px 16px !important;
+  transition: color 0.2s ease;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+  color: var(--orange-btn) !important;
+}
+
+.dropdown-menu-glass {
+  background:
+    linear-gradient(rgba(0, 118, 150, 0.9), rgba(0, 118, 150, 0.92)),
+    url('images/blog pics.png') center/cover no-repeat !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: 20px !important;
+  padding: 20px 18px !important;
+  width: max-content !important;
+  max-width: 90vw;
+  min-width: 280px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  overflow: hidden;
+}
+
+.dropdown-menu-glass .dropdown-item {
+  color: #ffffff !important;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  background: transparent !important;
+  white-space: normal !important;
+  display: block;
+}
+
+.dropdown-menu-glass .dropdown-item:hover,
+.dropdown-menu-glass .dropdown-item.active {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+@media (min-width: 992px) {
+  .dropdown-menu-glass .dropdown-item {
+    white-space: nowrap !important;
+  }
+  .nav-item.dropdown:hover .dropdown-menu-glass {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .dropdown-menu-glass {
+    width: 100% !important;
+    margin-top: 8px;
+    text-align: left;
+  }
+}
+
+/* =============================================================
+   SHARED BADGES & BUTTONS
+   ============================================================= */
+.badge {
   display: inline-block;
-  background: #EDF1F7;
-  color: var(--klin-navy-text);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
   text-transform: uppercase;
+  border-radius: 6px;
+  margin-bottom: 16px;
 }
 
-.section-eyebrow--light {
-  background: rgba(255, 255, 255, 0.6);
+.badge-white {
+  background-color: var(--light-badge-bg);
+  color: #ffffff;
 }
 
-.section-title {
+.badge-orange {
+  background-color: var(--badge-orange-bg);
+  color: var(--badge-orange-text);
+}
+
+.btn-orange,
+.btns-orange,
+.btn-brand-orange {
+  background-color: var(--orange-btn);
+  color: #ffffff;
+  padding: 13px 26px;
+  border-radius: 8px;
   font-weight: 700;
-  font-size: 2rem;
-  line-height: 1.3;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.section-text {
-  color: var(--klin-body-text);
-  line-height: 1.75;
+.btn-orange:hover,
+.btns-orange:hover,
+.btn-brand-orange:hover {
+  background-color: #28a745;
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
-/* Hero Section Container & Gradient Background */
+/* =============================================================
+   HERO SECTION
+   ============================================================= */
 .hero-section {
   position: relative;
-  background: linear-gradient(180deg, #ffffff 0%, #7db9d3 50%, #15799a 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #e3f2f8 40%, #09799D 100%);
   padding-top: 4rem;
-  padding-bottom: 3rem;
+  padding-bottom: 0;
   overflow: hidden;
 }
 
 .hero-title {
-  font-weight: 700;
-  font-size: 2.75rem;
-  color: #000000;
-  line-height: 1.25;
+  font-weight: 800;
+  font-size: clamp(2.1rem, 4vw, 2.85rem);
+  color: #0b1320;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
-/* Person & Badge Overlay Setup */
 .hero-visual {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
 }
 
 .hero-person-wrapper {
@@ -170,123 +237,143 @@ section {
   display: inline-block;
 }
 
-.hero-person {
-  max-width: 500px;
-  width: 100%;
-  height: auto;
-  display: block;
+.hero-img-container {
+  display: flex;
+  justify-content: center;
 }
 
-/* Store Badges Container */
+.hero-person {
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+  vertical-align: bottom;
+}
+
 .hero-store-badges {
   position: absolute;
-  bottom: 25px;
+  bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 14px;
+  z-index: 10;
   width: max-content;
-  z-index: 2;
 }
 
-/* Shared Badge Styles */
 .store-badge {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 16px;
-  border-radius: 8px;
+  gap: 12px;
+  padding: 10px 20px;
+  border-radius: 14px;
   text-decoration: none;
-  font-family: inherit;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  min-width: 195px;
+  height: 60px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .store-badge:hover {
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.store-badge.badge-light,
+.store-badge-light {
+  background-color: #ffffff;
+  color: #111111;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.store-badge.badge-dark,
+.store-badge-dark {
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.store-badge .img1 {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .store-badge i {
-  font-size: 1.8rem;
-  line-height: 1;
+  font-size: 24px;
+  flex-shrink: 0;
 }
 
 .badge-text {
   display: flex;
   flex-direction: column;
   text-align: left;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
-.badge-text small {
-  font-size: 0.65rem;
-  opacity: 0.8;
+.badge-text small,
+.badge-text .small-text {
+  font-size: 0.7rem;
+  opacity: 0.85;
 }
 
 .badge-text strong {
   font-size: 0.9rem;
-}
-
-/* Light Badge (Google Play) */
-.badge-light {
-  background-color: #ffffff;
-  color: #000000;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.badge-light i {
-  color: #000000;
-}
-
-/* Dark Badge (Scan Android) */
-.badge-dark {
-  background-color: #0d0d0d;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.badge-dark i {
-  color: #ffffff;
-}
-
-.store-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: #fff;
-  color: var(--klin-navy-text);
-  border-radius: 10px;
-  padding: 0.5rem 1.1rem;
-  font-size: 0.75rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.store-badge i {
-  font-size: 1.4rem;
-}
-
-.store-badge--dark {
-  background: #14181c;
-  color: #fff;
+  font-weight: 700;
 }
 
 /* =============================================================
-   WHAT WE DO — PHONE MOCKUPS
+   ABOUT INTRO
    ============================================================= */
-.what-we-do-section {
-  background: var(--klin-bg-light);
+.about-intro {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  background-color: #ffffff;
+  padding-left: 8% !important;
+  padding-right: 8% !important;
 }
-img[alt*="Klinsheet App Mockups"] {
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+
+.about-intro-img {
+  flex: 1;
+  min-width: 280px;
 }
+
+.about-intro-img img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+.about-intro-text {
+  flex: 1.1;
+  min-width: 280px;
+}
+
+.about-intro-text h2 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.about-intro-text p {
+  font-size: 0.96rem;
+  color: #444444;
+  margin-bottom: 24px;
+}
+
 /* =============================================================
    OUR SERVICES
    ============================================================= */
 .services-section {
-  background: #fff;
+  background: #ffffff;
 }
 
 .service-item h6 {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   color: var(--klin-navy-text);
@@ -296,217 +383,123 @@ img[alt*="Klinsheet App Mockups"] {
   margin-bottom: 0.5rem;
 }
 
-.service-item h6 i {
-  color: var(--klin-orange);
+.service-item h6 img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .service-item p {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--klin-body-text);
   margin: 0;
 }
 
-/* Laptop mockup */
 .laptop-mockup {
   display: inline-block;
   width: 100%;
-  max-width: 420px;
-}
-
-.laptop-screen {
-  background: #16191c;
-  border-radius: 14px 14px 0 0;
-  padding: 10px;
-  display: flex;
-  gap: 8px;
-  min-height: 300px;
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
-}
-
-.laptop-base {
-  height: 14px;
-  background: linear-gradient(#2b2f33, #101214);
-  border-radius: 0 0 10px 10px;
-  margin: 0 -8px;
-}
-
-.dashboard-sidebar {
-  background: #1e2226;
-  border-radius: 8px;
-  padding: 10px 8px;
-  width: 34%;
-  color: #cfd3d8;
-  font-size: 0.55rem;
-}
-
-.dashboard-user {
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.6rem;
-  margin-bottom: 8px;
-}
-
-.dashboard-nav-item {
-  padding: 5px 6px;
-  border-radius: 5px;
-  margin-bottom: 3px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.dashboard-nav-item i {
-  font-size: 0.65rem;
-}
-
-.dashboard-nav-item.active {
-  background: var(--klin-orange);
-  color: #fff;
-}
-
-.dashboard-main {
-  background: #fff;
-  border-radius: 8px;
-  padding: 12px;
-  width: 66%;
-  text-align: left;
-  font-size: 0.62rem;
-}
-
-.dashboard-main h6 {
-  font-size: 0.8rem;
-}
-
-.dashboard-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #f4f5f7;
-  border-radius: 6px;
-  padding: 6px 8px;
-  margin-bottom: 6px;
-}
-
-.dashboard-row i {
-  color: var(--klin-orange);
-  font-size: 0.9rem;
-}
-
-.dashboard-row small {
-  color: #8b8f97;
-  font-size: 0.55rem;
-}
-
-.verify-box {
-  border: 1px solid #e3e5e9;
-  border-radius: 6px;
-  padding: 6px;
-  font-size: 0.5rem;
-  font-weight: 600;
-  color: var(--klin-navy-text);
-}
-
-.verify-box small {
-  display: block;
-  font-weight: 400;
-  color: #9aa0a8;
-  font-size: 0.45rem;
-}
-
-.verify-box.active {
-  border-color: var(--klin-orange);
-  background: #fff5ef;
-}
-
-.laptop-mockup--form .dashboard-main {
-  width: 100%;
-}
-
-.laptop-mockup--form .laptop-screen {
-  min-height: 340px;
+  max-width: 440px;
 }
 
 /* =============================================================
-   DOWNLOAD APP CTA
+   DOWNLOAD APP SECTION
    ============================================================= */
 .download-app-section {
-  background: var(--klin-bg-light);
-  padding: 4rem 0;
+  padding: 50px 0;
 }
 
 .download-app-card {
-  background: linear-gradient(120deg, var(--klin-green-1), var(--klin-green-2));
-  border-radius: 22px;
-  padding: 3.5rem 3rem;
   position: relative;
-  overflow: hidden;
+  background:
+    linear-gradient(105deg, rgba(122, 186, 160, 0.9), rgba(59, 142, 114, 0.88)),
+    url('images/backgroud 1.png') center/cover no-repeat !important;
+  border-radius: 24px;
+  padding: 50px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 380px;
+  color: #ffffff;
+  overflow: visible;
+}
+
+.download-app-content {
+  max-width: 52%;
+  z-index: 2;
 }
 
 .download-title {
-  font-size: 2.6rem;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.2;
+  font-size: clamp(2rem, 3.8vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  color: #ffffff;
 }
 
 .download-text {
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 480px;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  margin-bottom: 28px;
+  max-width: 92%;
 }
 
-.download-phones {
-  position: relative;
-  height: 380px;
-}
-
-.download-phone {
-  position: absolute;
-  width: 190px;
-  height: 380px;
-  border-radius: 28px;
-  border: 6px solid #1a1a1a;
-  overflow: hidden;
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
-}
-
-.download-phone--back {
-  left: 10%;
-  top: 0;
-  background: linear-gradient(160deg, #23282c, #14171a);
-  z-index: 1;
-}
-
-.download-phone--front {
-  right: 5%;
-  top: 40px;
-  background: linear-gradient(160deg, #7fbf6b, #4d8f3d);
-  z-index: 2;
+.store-buttons {
   display: flex;
+  gap: 14px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.lock-icon {
-  font-size: 2.6rem;
-  color: #fff;
+.download-app-phones {
+  position: relative;
+  width: 42%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 3;
 }
 
-.mini-card {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  padding: 8px 10px;
-  margin-bottom: 8px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #fff;
+.phones-img {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.2));
 }
 
 /* =============================================================
    HOW IT WORKS
    ============================================================= */
 .how-it-works-section {
-  background: var(--klin-sage);
+  background-color: #6C933A33;
 }
+
+.step-image-frame {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+.step-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeInSequence 12s infinite;
+}
+
+.step-img-1 { animation-delay: 0s; }
+.step-img-2 { animation-delay: 4s; }
+.step-img-3 { animation-delay: 8s; }
 
 .how-step {
   border-left: 3px solid var(--klin-orange);
@@ -527,15 +520,34 @@ img[alt*="Klinsheet App Mockups"] {
   line-height: 1.6;
 }
 
+@keyframes fadeInSequence {
+  0% { opacity: 0; }
+  8% { opacity: 1; }
+  33% { opacity: 1; }
+  41% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
 /* =============================================================
    HR SOLUTIONS
    ============================================================= */
 .hr-solutions-section {
-  background: #fff;
+  background: #ffffff;
+}
+
+.hr-solutions-section h1 {
+  font-size: clamp(1.75rem, 3.5vw, 2.4rem);
+  line-height: 1.2;
+}
+
+.hr-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
 }
 
 .hr-card {
-  background: #fff;
+  background: #ffffff;
   border-radius: 14px;
   border: 1px solid #eef0f3;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -544,96 +556,147 @@ img[alt*="Klinsheet App Mockups"] {
   flex-direction: column;
 }
 
+.hr-card-img-wrap {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  position: relative;
+  background: #f8fafc;
+}
+
 .hr-card-img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
+  display: block;
+  animation: autoZoomImg 6s ease-in-out infinite alternate;
 }
+
+.hr-card:nth-child(2) .hr-card-img { animation-delay: 1.5s; }
+.hr-card:nth-child(3) .hr-card-img { animation-delay: 3s; }
 
 .hr-card-body {
-  padding: 1.4rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
-.hr-card-body h5 {
+.hr-card-body h3 {
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   margin-bottom: 0.6rem;
 }
 
 .hr-card-body p {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--klin-body-text);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.btn-cards:hover {
+  background-color: transparent !important;
+  border: 1px solid #4C7D63;
+  color: #3b8e72;
+}
+
+@keyframes autoZoomImg {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
 }
 
 /* =============================================================
-   STATS
+   PROVEN RESULTS / STATS SECTION
    ============================================================= */
-/* Container Background Card */
 .stats-card {
-  background: linear-gradient(135deg, rgba(32, 114, 76, 0.92), rgba(20, 80, 50, 0.95)), 
-              url('path-to-your-laptop-bg.jpg') center/cover no-repeat;
+  position: relative;
   border-radius: 24px;
+  overflow: hidden;
+  background:
+    linear-gradient(120deg, rgba(14, 92, 74, 0.92), rgba(11, 123, 153, 0.88)),
+    url('images/Group 33382.png') center/cover no-repeat;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* Individual Stat Boxes */
+.stats-row-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.stats-col-text {
+  flex: 1 1 280px;
+  color: #ffffff;
+}
+
+.stats-heading {
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.stats-desc {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.stats-col-grid {
+  flex: 1.25 1 300px;
+  min-width: 0;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
 .stat-box {
   background: #ffffff;
   border-radius: 20px;
-  padding: 32px 28px;
+  padding: 28px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 180px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  min-height: 165px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
 .stat-number {
-  color: #000000;
-  font-weight: 700;
-  font-size: 2.5rem;
+  color: #111111;
+  font-weight: 800;
+  font-size: clamp(1.85rem, 3vw, 2.4rem);
   margin-bottom: 0;
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .stat-divider {
   width: 100%;
   height: 1px;
-  background-color: #f0f0f0;
-  margin: 20px 0 16px 0;
+  background-color: #ececec;
+  margin: 16px 0 14px 0;
 }
 
 .stat-label {
   color: #111111;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.95rem;
+  line-height: 1.35;
 }
-/* Container Background Card with Dual Gradients & Background Image */
-.stats-card {
-  position: relative;
-  border-radius: 24px;
-  overflow: hidden;
-  /* Layers: Bright top-left/bottom-right radial glows + semi-transparent base green + laptop image */
-  background: 
-    radial-gradient(circle at 10% 10%, rgba(108, 147, 58, 0.5) 0%, transparent 40%),
-    radial-gradient(circle at 90% 90%, rgba(108, 147, 58, 0.5) 0%, transparent 45%),
-    linear-gradient(135deg, rgba(32, 105, 68, 0.88), rgba(18, 70, 45, 0.92)),
-    url('images/2cca07193755b31b1b1f9c89601e4ce264316726.jpg') center/cover no-repeat;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  
-}
-
 
 /* =============================================================
    FAQ
    ============================================================= */
 .faq-section {
-  background: var(--klin-sage-dark);
+  background: #6C933A66;
 }
 
-
 .faq-contact-card {
-  background: #fff;
+  background: #ffffff;
   border-radius: 14px;
   padding: 1.8rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
@@ -651,7 +714,7 @@ img[alt*="Klinsheet App Mockups"] {
 }
 
 .accordion-item {
-  background: #fff;
+  background: #ffffff;
   border: none;
   border-radius: 12px !important;
   margin-bottom: 1rem;
@@ -666,7 +729,7 @@ img[alt*="Klinsheet App Mockups"] {
 }
 
 .accordion-button:not(.collapsed) {
-  background: #fff;
+  background: #ffffff;
   color: var(--klin-navy-text);
 }
 
@@ -676,7 +739,7 @@ img[alt*="Klinsheet App Mockups"] {
   font-family: "bootstrap-icons";
   font-size: 0.9rem;
   background-color: var(--klin-teal);
-  color: #fff;
+  color: #ffffff;
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -686,7 +749,7 @@ img[alt*="Klinsheet App Mockups"] {
 }
 
 .accordion-body {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--klin-body-text);
   line-height: 1.7;
 }
@@ -694,64 +757,63 @@ img[alt*="Klinsheet App Mockups"] {
 /* =============================================================
    TESTIMONIALS
    ============================================================= */
-/* Section Badge */
 .section-badge {
   background-color: #e2f0e8;
-  color: #333;
-  font-size: 0.8rem;
-  font-weight: 600;
+  color: #222222;
+  font-size: 0.78rem;
+  font-weight: 700;
   padding: 6px 16px;
   border-radius: 6px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  display: inline-block;
 }
 
 .section-title {
-  color: #111;
-  font-size: 2.25rem;
+  color: #111111;
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  line-height: 1.2;
 }
 
-/* Card Container & Layout */
 .testimonial-card-wrapper {
   position: relative;
   padding-bottom: 25px;
+  height: 100%;
 }
 
 .testimonial-card {
-  background-color: #f1f5ee; /* Soft Figma light green */
+  background-color: #f1f5ee;
   border-radius: 20px;
-  padding: 35px 30px 45px 30px;
+  padding: 32px 28px 44px 28px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 280px;
+  min-height: 270px;
+  height: 100%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
-/* Quote Icon Styling */
 .quote-icon {
-  color: #f07444; /* Figma orange */
-  font-size: 3rem;
+  color: #f07444;
+  font-size: 2.75rem;
   line-height: 1;
   margin-bottom: 12px;
 }
 
-/* Testimonial Text */
 .testimonial-text {
-  color: #555555;
+  color: #444444;
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.65;
   margin-bottom: 24px;
 }
 
-/* Stars */
 .stars {
   color: #f07444;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   display: flex;
   gap: 4px;
 }
 
-/* Profile Info Block (Positioned Bottom-Left Cutout) */
 .testimonial-author {
   position: absolute;
   bottom: 0;
@@ -776,18 +838,17 @@ img[alt*="Klinsheet App Mockups"] {
 .author-name {
   display: block;
   font-size: 0.9rem;
-  color: #111;
-  font-weight: 600;
+  color: #111111;
+  font-weight: 700;
   line-height: 1.2;
 }
 
 .author-time {
   display: block;
-  font-size: 0.8rem;
-  color: #888888;
+  font-size: 0.78rem;
+  color: #777777;
 }
 
-/* Carousel Indicator Bar */
 .carousel-indicator {
   width: 40px;
   height: 5px;
@@ -796,180 +857,213 @@ img[alt*="Klinsheet App Mockups"] {
   margin: 0 auto;
 }
 
-/* Main Section setup */
+/* =============================================================
+   INDUSTRIES WE SERVE
+   ============================================================= */
 .industries-section {
-  background-color: #000000; /* Dark backdrop behind the image strip */
-  padding: 0;
-  position: relative;
-}
-
-/* Section Badge Header */
-.section-badge {
-  background-color: #eaf4f8;
-  color: #1a202c;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  padding: 6px 18px;
-  border-radius: 6px;
-}
-
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #000000;
-  margin-top: 1rem;
-}
-
-/* Header & CTA Positioning over SVG */
-.header-wrapper {
-  padding-top: 1.5rem;
-  margin-bottom: -40px;
-}
-
-.cta-wrapper {
-  margin-top: -60px;
-  padding-bottom: 2rem;
-}
-
-/* Curves Positioning */
-.curve-mask {
-  position: absolute;
-  left: 0;
   width: 100%;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.curve-mask svg {
-  display: block;
-  width: 100%;
-  height: 180px;
-}
-
-.curve-top {
-  top: 0;
-}
-
-.curve-bottom {
-  bottom: 0;
-}
-
-/* Image Strip & Hover Effects */
-.industries-strip-wrapper {
-  width: 100%;
-  overflow-x: auto;
-  padding: 40px 0;
-}
-
-.industries-row {
-  min-width: 1200px;
-  width: 100%;
-}
-
-.industry-item {
-  position: relative;
-  flex: 1;
-  height: 380px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 50px 0 40px;
+  text-align: center;
   overflow: hidden;
-  border-right: 2px solid rgba(0, 0, 0, 0.4);
 }
 
-.industry-item img {
+.section-tag {
+  display: inline-block;
+  background: #e8eef1;
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #333333;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.industries-section h2 {
+  margin: 0 0 24px 0;
+  font-size: clamp(1.65rem, 3vw, 2.1rem);
+  font-weight: 800;
+  color: #111111;
+  line-height: 1.3;
+  padding: 0 16px;
+}
+
+.svg-mask-def {
+  position: absolute;
+}
+
+.industry-carousel {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  margin: 10px auto;
+  overflow: hidden;
+  clip-path: url(#fisheye-clip);
+  -webkit-clip-path: url(#fisheye-clip);
+}
+
+.industry-track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
+  height: 100%;
+  animation: industrySlide 22s linear infinite;
+}
+
+.industry-carousel:hover .industry-track {
+  animation-play-state: paused;
+}
+
+@keyframes industrySlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 6px)); }
+}
+
+.industry-card {
+  position: relative;
+  width: 190px;
+  height: 100%;
+  flex: 0 0 190px;
+  overflow: hidden;
+  background: #eeeeee;
+}
+
+.industry-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* Blue Overlay Badges on Images */
-.industry-badge {
+.industry-card span {
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(30, 115, 145, 0.75); /* Semi-transparent blue */
-  backdrop-filter: blur(4px);
-  color: #ffffff;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 500;
   white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(25, 125, 150, 0.88);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  z-index: 5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* Orange CTA Button */
-.btn-brand-orange {
-  background-color: #f26522;
-  color: #ffffff;
-  font-weight: 600;
-  padding: 10px 32px;
-  border-radius: 8px;
+.read-more {
+  position: relative;
+  z-index: 20;
+  margin-top: 18px;
   border: none;
-  font-size: 0.95rem;
-  text-decoration: none;
-  display: inline-block;
-  box-shadow: 0 4px 10px rgba(242, 101, 34, 0.3);
-  transition: background-color 0.2s ease;
+  background: #f1683a;
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.btn-brand-orange:hover {
-  background-color: #d95316;
-  color: #ffffff;
+.read-more:hover {
+  background: #28a745;
+  transform: translateY(-2px);
 }
 
 /* =============================================================
    INSIGHT / BLOG
    ============================================================= */
 .insight-section {
-  background: var(--klin-bg-light);
+  background-color: #ffffff;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  background-color: #e2ede5;
+  color: #222222;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 6px;
+  text-transform: uppercase;
 }
 
 .blog-card {
-  background: transparent;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .blog-img-wrap {
-  border-radius: 14px;
-  overflow: hidden;
+  width: 100%;
   height: 220px;
-  margin-bottom: 1rem;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  position: relative;
 }
 
-.blog-img-wrap img {
+.blog-img-wrap img,
+.blog-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.blog-card:hover .blog-img-wrap img {
+  transform: scale(1.06);
 }
 
 .blog-meta {
-  font-size: 0.72rem;
-  color: #9aa0a8;
-  margin-bottom: 0.6rem;
+  font-size: 0.8rem;
+  color: #777777;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .blog-card h5 {
+  font-size: 1.08rem;
   font-weight: 700;
-  font-size: 1.05rem;
-  margin-bottom: 0.6rem;
+  color: #111111;
+  line-height: 1.4;
+  margin-bottom: 10px;
 }
 
 .blog-card p {
-  font-size: 0.86rem;
-  color: var(--klin-body-text);
+  font-size: 0.9rem;
+  color: #555555;
   line-height: 1.6;
+  margin-bottom: 16px;
+  flex-grow: 1;
 }
 
 .read-more-link {
-  color: var(--klin-navy-text);
+  color: #f1683a;
+  font-size: 0.9rem;
   font-weight: 700;
-  font-size: 0.85rem;
-  border-bottom: 2px solid var(--klin-orange);
-  padding-bottom: 2px;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
 }
-/* Partners Section */
+
+.read-more-link:hover {
+  color: #d95326;
+  transform: translateX(3px);
+}
+
+/* =============================================================
+   TRUSTED PARTNERS MARQUEE
+   ============================================================= */
 .partners-section {
   background-color: #ffffff;
   width: 100%;
@@ -987,13 +1081,27 @@ img[alt*="Klinsheet App Mockups"] {
   text-transform: uppercase;
 }
 
-/* Wrapper and Responsive Item Grid */
-.partners-logos-wrapper {
+.partners-marquee {
   width: 100%;
-  margin-top: 1rem;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+.partners-track {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: max-content;
+  animation: scrollMarquee 25s linear infinite;
+}
+
+.partners-marquee:hover .partners-track {
+  animation-play-state: paused;
 }
 
 .partner-item {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1001,52 +1109,28 @@ img[alt*="Klinsheet App Mockups"] {
 }
 
 .partner-img {
-  max-width: 120px; /* Constrains logo size on desktop */
+  max-width: 120px;
   width: 100%;
   height: auto;
   object-fit: contain;
-  filter: grayscale(100%); /* Optional: Normalizes brand colors if needed */
-  opacity: 0.8;
-  transition: opacity 0.3s ease, filter 0.3s ease;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
 }
 
-.partner-img:hover {
-  filter: grayscale(0%);
-  opacity: 1;
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-/* Screen Size Adjustments */
-@media (max-width: 768px) {
-  .partner-item {
-    flex: 0 1 calc(33.333% - 1.5rem); /* Displays 3 logos per row on mobile screens */
-  }
-  
-  .partner-img {
-    max-width: 90px;
-  }
-}
-
-@media (max-width: 480px) {
-  .partner-item {
-    flex: 0 1 calc(50% - 1rem); /* Displays 2 logos per row on smaller mobile devices */
-  }
-}
-/* Footer Base Background & Colors */
-.site-footer {
-  background-color: #0b7b99; /* Exact teal color from image */
+/* =============================================================
+   ACADEMIC-STYLE FOOTER
+   ============================================================= */
+footer.site-footer {
+  background-color: var(--teal-bg);
   color: #ffffff;
-  padding-top: 4rem;
-  padding-bottom: 1rem;
-  font-family: inherit;
+  padding: 60px 0 20px 0;
 }
 
-/* Horizontal Dividers */
-.footer-divider {
-  border-color: rgba(255, 255, 255, 0.25);
-  opacity: 1;
-}
-
-/* Newsletter Styles */
 .newsletter-title {
   font-size: 1.85rem;
   font-weight: 700;
@@ -1060,6 +1144,8 @@ img[alt*="Klinsheet App Mockups"] {
 }
 
 .newsletter-input {
+  flex: 1 1 auto;
+  min-width: 0;
   max-width: 380px;
   height: 48px;
   border-radius: 4px;
@@ -1073,10 +1159,11 @@ img[alt*="Klinsheet App Mockups"] {
 }
 
 .btn-newsletter {
-  background-color: #f26522; /* Brand orange color */
+  flex: 0 0 auto;
+  background-color: #f26522;
   color: #ffffff;
   font-weight: 600;
-  padding: 0 1.75rem;
+  padding: 0 1.5rem;
   height: 48px;
   border-radius: 6px;
   border: none;
@@ -1084,44 +1171,40 @@ img[alt*="Klinsheet App Mockups"] {
 }
 
 .btn-newsletter:hover {
-  background-color: #d95316;
+  background-color: green;
   color: #ffffff;
 }
 
-/* Logo & Content */
-.footer-logo {
-  max-height: 45px;
-  width: auto;
-  filter: brightness(0) invert(1); /* Makes the logo white if SVG/transparent, or remove filter if image is already white */
+.footer-divider {
+  border-color: rgba(255, 255, 255, 0.2);
+  opacity: 1;
 }
 
 .footer-description {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
 }
 
-/* Social Icon Boxes */
-.social-box {
+.footer-badge-shield img {
+  height: 120px;
+  width: 120px;
+  object-fit: contain;
+}
+
+.footer-qr-box {
+  background: #ffffff;
+  padding: 4px;
+  border-radius: 6px;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background-color: #f26522;
-  color: #ffffff;
-  border-radius: 4px;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: transform 0.2s ease;
 }
 
-.social-box:hover {
-  color: #ffffff;
-  transform: translateY(-2px);
+.footer-qr-box img {
+  height: 120px;
+  width: 120px;
+  object-fit: contain;
 }
 
-/* Link Columns */
 .footer-heading {
   font-size: 1.05rem;
   font-weight: 700;
@@ -1151,47 +1234,169 @@ img[alt*="Klinsheet App Mockups"] {
   text-decoration: underline;
 }
 
-/* Bottom Bar */
-.footer-bottom-text {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.88rem;
+.social-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #f1683a;
+  color: #ffffff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
+.social-box:hover {
+  color: #ffffff;
+  background-color: #d95328;
+  transform: translateY(-2px);
+}
 
+.footer-bottom-text {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+}
 
 /* =============================================================
-   RESPONSIVE
+   TABLET & MOBILE RESPONSIVENESS
    ============================================================= */
 @media (max-width: 991.98px) {
-  .hero-title {
-    font-size: 2.1rem;
+  body {
+    padding-top: 72px;
   }
 
-  .section-title {
-    font-size: 1.6rem;
-  }
-
-  .phone-mockup-group {
-    min-height: 420px;
+  .about-intro {
+    flex-direction: column;
+    gap: 28px;
+    padding-left: 6% !important;
+    padding-right: 6% !important;
   }
 
   .download-app-card {
-    padding: 2.5rem 1.5rem;
+    flex-direction: column;
+    padding: 40px 28px;
     text-align: center;
+    overflow: hidden;
   }
 
-  .download-title {
-    font-size: 2rem;
+  .download-app-content {
+    max-width: 100%;
+    margin-bottom: 24px;
   }
 
-  .stats-card {
-    padding: 2rem 1.5rem;
+  .download-text {
+    max-width: 100%;
+  }
+
+  .store-buttons {
+    justify-content: center;
+  }
+
+  .download-app-phones {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .phones-img {
+    max-width: 360px;
+  }
+
+  .hr-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .newsletter-input {
+    max-width: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  section {
+    scroll-margin-top: 76px;
+  }
+
+  .hero-section {
+    padding-top: 2.5rem;
+  }
+
+  .hero-store-badges {
+    position: static;
+    transform: none;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 12px 20px;
+  }
+
+  .store-badge {
+    min-width: 0;
+    width: min(100%, 210px);
+    height: 54px;
+    padding: 8px 14px;
+    border-radius: 12px;
+  }
+
+  .step-image-frame {
+    height: clamp(220px, 60vw, 320px);
+  }
+
+  .hr-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-row-flex {
+    padding: 4px;
+    gap: 24px;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .stat-box {
+    min-height: 135px;
+    padding: 20px 18px;
+    border-radius: 16px;
+  }
+
+  .industry-card {
+    flex: 0 0 175px;
   }
 }
 
 @media (max-width: 575.98px) {
-  .phone-mockup-group {
-    transform: scale(0.8);
-    transform-origin: top center;
+  footer.site-footer {
+    padding: 48px 0 16px 0;
+  }
+
+  .newsletter-title {
+    font-size: 1.5rem;
+  }
+
+  .btn-newsletter {
+    padding: 0 1.25rem;
+  }
+
+  .footer-heading {
+    font-size: 0.92rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.55rem;
+  }
+
+  .footer-links a {
+    font-size: 0.82rem;
+  }
+
+  .footer-badge-shield img,
+  .footer-qr-box img {
+    height: 92px;
+    width: 92px;
   }
 }

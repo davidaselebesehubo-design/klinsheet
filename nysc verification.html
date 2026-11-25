@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Industries We Serve - Klinsheet</title>
-
+  <title>NYSC Verification - Klinsheet</title>
+  
   <!-- Bootstrap 5 CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+  
   <style>
     /* Global Styles */
     *, *::before, *::after {
@@ -42,6 +42,7 @@
       --light-badge-bg: rgba(255, 255, 255, 0.2);
       --badge-orange-bg: #fdeee9;
       --badge-orange-text: #f1683a;
+      --card-white: #ffffff;
     }
 
     /* Bootstrap Navbar Customization */
@@ -142,12 +143,13 @@
     }
 
     .badge-orange {
-      background-color: var(--badge-orange-bg) !important;
-      color: var(--orange-btn);
+      background-color: var(--badge-orange-bg);
+      color: var(--badge-orange-text);
     }
 
-    .btn {
-      display: inline-block;
+    .btn-orange {
+      background-color: var(--orange-btn);
+      color: #ffffff;
       padding: 14px 28px;
       border-radius: 8px;
       font-weight: 800;
@@ -156,11 +158,7 @@
       border: none;
       transition: background 0.2s ease, transform 0.2s ease;
       text-decoration: none;
-    }
-
-    .btn-orange {
-      background-color: var(--orange-btn);
-      color: #ffffff;
+      display: inline-block;
     }
 
     .btn-orange:hover {
@@ -169,7 +167,7 @@
       transform: translateY(-2px);
     }
 
-    /* Hero Section */
+    /* Section 1: Hero Banner */
     .hero {
       background-color: var(--teal-bg);
       color: #ffffff;
@@ -183,125 +181,252 @@
       font-weight: 800;
     }
 
-    /* Industries Main Container */
-    .industries-container {
+    /* Section 2: About / Features */
+    .about-section {
       padding: 80px 8%;
-      display: flex;
-      flex-direction: column;
-      gap: 100px;
-    }
-
-    /* Alternating Industry Row Block */
-    .industry-row {
       display: flex;
       align-items: center;
       gap: 60px;
+      flex-wrap: wrap;
     }
 
-    .industry-row.reverse {
-      flex-direction: row-reverse;
-    }
-
-    /* Image Wrapper with Green Backdrop Offset Accent */
-    .industry-image-wrapper {
+    .about-image-wrapper {
       flex: 1;
-      position: relative;
+      min-width: 280px;
       display: flex;
       justify-content: center;
+      align-items: center;
     }
 
-    .image-backdrop {
+    .about-image-placeholder {
       width: 100%;
-      max-width: 480px;
-      height: 420px;
-      border-radius: 14px;
-      overflow: hidden;
-      position: relative;
+      max-width: 450px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .image-backdrop img {
+    .about-image-placeholder img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 14px;
+      height: auto;
+      max-height: 500px;
+      object-fit: contain;
     }
 
-    /* Green Backdrop Shadow Accents */
-    .industry-image-wrapper::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      max-width: 480px;
-      height: 420px;
-      background-color: var(--green-bg);
-      border-radius: 14px;
-      z-index: -1;
-    }
-
-    .industry-row:nth-child(odd) .industry-image-wrapper::before {
-      top: -24px;
-      left: -24px;
-    }
-
-    .industry-row:nth-child(even) .industry-image-wrapper::before {
-      top: -24px;
-      right: -24px;
-    }
-
-    /* Industry Content */
-    .industry-content {
+    .about-content {
       flex: 1.2;
+      min-width: 280px;
     }
 
-    .industry-content h2 {
-      font-size: clamp(26px, 3.6vw, 38px);
-      font-weight: 800;
-      color: #111111;
-      line-height: 1.25;
-      margin-bottom: 16px;
-    }
-
-    .industry-content > p {
+    .about-content p {
+      color: #222;
       font-size: 16.5px;
       font-weight: 600;
-      color: #333333;
-      margin-bottom: 24px;
-      line-height: 1.65;
+      margin-bottom: 18px;
     }
 
-    .benefits-title {
-      font-size: 16px;
-      font-weight: 800;
-      color: #111111;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin: 28px 0 36px 0;
     }
 
-    .benefit-list {
-      list-style: none;
-      margin-bottom: 30px;
-      padding: 0;
-    }
-
-    .benefit-list li {
-      font-size: 15.5px;
-      font-weight: 700;
-      color: #222222;
-      margin-bottom: 10px;
+    .feature-header {
       display: flex;
       align-items: center;
       gap: 12px;
+      margin-bottom: 8px;
     }
 
-    .benefit-list li::before {
-      content: "✓";
-      color: var(--teal-bg);
-      font-weight: 900;
+    .feature-header img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .feature-item h4 {
       font-size: 18px;
+      font-weight: 800;
+      color: #111;
+      margin: 0;
     }
 
-    /* Academic-Style Newsletter & Footer */
+    .feature-item p {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+      padding-left: 36px;
+    }
+
+    /* Section 3: What We Verify */
+    .verify-section {
+      background-color: var(--green-bg);
+      padding: 80px 8%;
+    }
+
+    .verify-section h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800;
+      color: #ffffff;
+      max-width: 620px;
+      line-height: 1.2;
+      margin-bottom: 44px;
+    }
+
+    .cards-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background-color: var(--card-white);
+      padding: 32px 28px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      border: none;
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      background-color: #e6f3f5;
+      color: var(--teal-bg);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .card-icon img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    .card hr {
+      margin: 10px 0 14px 0;
+      opacity: 0.15;
+    }
+
+    .card p {
+      font-size: 15.5px;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+    }
+
+    /* Section 4: Why Choose NYSC Verification */
+    .why-nysc-section {
+      background-color: #f8fafc;
+      padding: 80px 8%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .why-nysc-container {
+      max-width: 1240px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    .why-nysc-content {
+      flex: 1;
+      max-width: 540px;
+    }
+
+    .badge-custom {
+      display: inline-block;
+      background-color: #eef7f6;
+      color: #f1683a;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
+    .why-nysc-content h2 {
+      font-size: clamp(28px, 3.8vw, 40px);
+      font-weight: 800;
+      color: #111111;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .why-nysc-content .description {
+      font-size: 16.5px;
+      font-weight: 600;
+      color: #333333;
+      line-height: 1.65;
+      margin-bottom: 30px;
+    }
+
+    .why-nysc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .why-nysc-list li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 17px;
+      font-weight: 800;
+      color: #222222;
+    }
+
+    .check-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: #fdeee9;
+      color: #f1683a;
+      font-size: 15px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .why-nysc-image-wrapper {
+      flex: 1.1;
+      width: 100%;
+    }
+
+    .why-nysc-image {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      display: block;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Section 5: Academic-Style Newsletter & Footer */
     footer.site-footer {
       background-color: var(--teal-bg);
       color: #ffffff;
@@ -321,6 +446,8 @@
     }
 
     .newsletter-input {
+      flex: 1 1 auto;
+      min-width: 0;
       max-width: 380px;
       height: 48px;
       border-radius: 4px;
@@ -334,10 +461,11 @@
     }
 
     .btn-newsletter {
+      flex: 0 0 auto;
       background-color: #f26522;
       color: #ffffff;
       font-weight: 600;
-      padding: 0 1.75rem;
+      padding: 0 1.5rem;
       height: 48px;
       border-radius: 6px;
       border: none;
@@ -433,85 +561,108 @@
       color: rgba(255, 255, 255, 0.75);
     }
 
-    /* Responsive Design */
+    /* =============================================================
+       RESPONSIVE BREAKPOINTS (TABLET & MOBILE)
+       ============================================================= */
     @media (max-width: 991.98px) {
       body {
         padding-top: 72px;
       }
-    }
 
-    @media (max-width: 992px) {
-      .industry-row, 
-      .industry-row.reverse {
+      .why-nysc-container {
         flex-direction: column;
+        align-items: stretch;
         gap: 40px;
       }
-      .industry-image-wrapper::before { 
-        display: none; 
+
+      .why-nysc-content {
+        max-width: 100%;
+      }
+
+      .newsletter-input {
+        max-width: none;
       }
     }
 
     @media (max-width: 650px) {
       .hero,
-      .industries-container {
+      .about-section,
+      .verify-section,
+      .why-nysc-section {
         padding-left: 6%;
         padding-right: 6%;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      footer.site-footer {
+        padding: 48px 0 16px 0;
+      }
+      .newsletter-title {
+        font-size: 1.5rem;
+      }
+      .btn-newsletter {
+        padding: 0 1.25rem;
+      }
+      .footer-heading {
+        font-size: 0.92rem;
+        margin-bottom: 0.9rem;
+      }
+      .footer-links li {
+        margin-bottom: 0.55rem;
+      }
+      .footer-links a {
+        font-size: 0.82rem;
+      }
+      .footer-badge-shield img,
+      .footer-qr-box img {
+        height: 92px;
+        width: 92px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- FIXED TOP BOOTSTRAP NAVIGATION BAR -->
+  <!-- FIXED TOP BOOTSTRAP NAVBAR WITH DROPDOWN -->
   <nav class="navbar navbar-expand-lg navbar-custom border-bottom fixed-top">
     <div class="container-fluid px-lg-5">
       <a class="navbar-brand" href="index.html">
         <img src="images/klinsheet logo 1.png" alt="Klinsheet Logo">
       </a>
-
-      <!-- Mobile Toggle Button -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-      <!-- Nav Links & Dropdown -->
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link nav-link-custom" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-custom" href="About.html">About</a>
-          </li>
-
-          <!-- Services Dropdown -->
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="About.html">About</a></li>
+          
+          <!-- Service Dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link nav-link-custom dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link nav-link-custom dropdown-toggle active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Service
             </a>
             <ul class="dropdown-menu dropdown-menu-glass" aria-labelledby="servicesDropdown">
               <li><a class="dropdown-item" href="academic verification.html">Academic Verification</a></li>
               <li><a class="dropdown-item" href="Previous Employee Check.html">Previous Employee Check</a></li>
               <li><a class="dropdown-item" href="guarantor check.html">Guarantor/ Reference Check</a></li>
-              <li><a class="dropdown-item" href="nysc verification.html">NYSC Verification</a></li>
+              <li><a class="dropdown-item active" href="nysc verification.html">NYSC Verification</a></li>
               <li><a class="dropdown-item" href="Address confirmation.html">Address Confirmation</a></li>
               <li><a class="dropdown-item" href="credit check.html">Credit Check</a></li>
               <li><a class="dropdown-item" href="criminal ceck.html">Criminal Check</a></li>
             </ul>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link nav-link-custom" href="insight.html">Insight</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-custom" href="job-portal.html">Job Portal</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-custom" href="contact us.html">Contact</a>
-          </li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="insight.html">Insight</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="job-portal.html">Job Portal</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="contact us.html">Contact</a></li>
         </ul>
-
-        <!-- Action Button -->
         <a href="request background check.html" class="btn btn-orange ms-lg-3 mt-3 mt-lg-0">Request a Background Check</a>
       </div>
     </div>
@@ -519,151 +670,157 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <span class="badge badge-orange">INDUSTRIES WE SERVE</span>
-    <h1>Background Verification Built for Your Industry</h1>
+    <span class="badge badge-orange">NYSC Verification</span>
+    <h1>Verify NYSC Credentials With Confidence.</h1>
   </section>
 
-  <!-- Industries Main Container -->
-  <section class="industries-container">
-
-    <div class="industry-row">
-      <div class="industry-image-wrapper">
-        <div class="image-backdrop">
-          <img src="images/corporate-team.jpg" alt="Corporate Professionals">
-        </div>
-      </div>
-      <div class="industry-content">
-        <span class="badge badge-orange">CORPORATE & ENTERPRISE</span>
-        <h2>Verify the people behind your organization.</h2>
-        <p>Support smarter recruitment and onboarding with comprehensive checks on candidates across key levels.</p>
-
-        <div class="benefits-title">Benefits</div>
-        <ul class="benefit-list">
-          <li>Reduce hiring risks</li>
-          <li>Verify employment history</li>
-          <li>Confirm academic credentials</li>
-          <li>Streamline recruitment</li>
-        </ul>
-
-        <a href="request background check.html" class="btn btn-orange">Request a Background Check</a>
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="about-image-wrapper">
+      <div class="about-image-placeholder">
+        <img src="images/Group 33374.png" alt="NYSC Verification Preview">
       </div>
     </div>
+    <div class="about-content">
+      <span class="badge badge-orange">What is NYSC Verification?</span>
+      <p>Klinsheet’s NYSC Verification service helps employers and organizations confirm the authenticity of a candidate’s National Youth Service Corps information.</p>
+      <p>We help validate submitted NYSC details so you can make more informed recruitment and onboarding decisions while reducing the risk of relying on inaccurate or unverifiable credentials.</p>
 
-    <div class="industry-row reverse">
-      <div class="industry-image-wrapper">
-        <div class="image-backdrop">
-          <img src="images/education-staff.jpg" alt="Education Professional">
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-header">
+            <img src="images/Frame.png" alt="icon">
+            <h4>Build Trust</h4>
+          </div>
+          <p>Create a more transparent recruitment process for employers and candidates.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-header">
+            <img src="images/Frame.png" alt="icon">
+            <h4>Reduce Credential Fraud</h4>
+          </div>
+          <p>Identify discrepancies between submitted NYSC information and available records.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-header">
+            <img src="images/Frame.png" alt="icon">
+            <h4>Strengthen Compliance</h4>
+          </div>
+          <p>Support your organization's recruitment and employee screening procedures.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-header">
+            <img src="images/Frame.png" alt="icon">
+            <h4>Save Time</h4>
+          </div>
+          <p>Simplify the verification process through a structured digital request and reporting system.</p>
         </div>
       </div>
-      <div class="industry-content">
-        <span class="badge badge-orange">EDUCATION</span>
-        <h2>Protect your institution with trusted verification.</h2>
-        <p>Support admissions, employment, and credential verification with reliable academic and identity verification services.</p>
 
-        <div class="benefits-title">Benefits</div>
-        <ul class="benefit-list">
-          <li>Confirm applicant information</li>
-          <li>Reduce academic fraud</li>
-          <li>Support institutional trust</li>
-          <li>Reduce administrative burden</li>
-        </ul>
-
-        <a href="request background check.html" class="btn btn-orange">Request a Background Check</a>
-      </div>
+      <a href="request background check.html" class="btn btn-orange">Request NYSC Verification</a>
     </div>
+  </section>
 
-    <div class="industry-row">
-      <div class="industry-image-wrapper">
-        <div class="image-backdrop">
-          <img src="images/healthcare-worker.jpg" alt="Healthcare Professional">
+  <!-- What We Verify Section -->
+  <section class="verify-section">
+    <span class="badge badge-white">What We Verify</span>
+    <h2>Comprehensive Checks on Important NYSC Information.</h2>
+
+    <div class="cards-grid-3">
+      <div class="card">
+        <div class="card-icon">
+          <img src="images/Frame.png" alt="">
         </div>
+        <h3>NYSC Certificate Details</h3>
+        <hr>
+        <p>Validate information provided on the candidate’s NYSC certificate.</p>
       </div>
-      <div class="industry-content">
-        <span class="badge badge-orange">HEALTHCARE</span>
-        <h2>Verify professionals who care for others.</h2>
-        <p>Help healthcare organizations validate the credentials, employment history, and background of staff and professionals.</p>
-
-        <div class="benefits-title">Benefits</div>
-        <ul class="benefit-list">
-          <li>Reduce operational risk</li>
-          <li>Strengthen patient trust</li>
-          <li>Support safer recruitment</li>
-          <li>Verify professional qualifications</li>
-        </ul>
-
-        <a href="request background check.html" class="btn btn-orange">Request a Background Check</a>
-      </div>
-    </div>
-
-    <div class="industry-row reverse">
-      <div class="industry-image-wrapper">
-        <div class="image-backdrop">
-          <img src="images/real-estate-engineer.jpg" alt="Real Estate Professional">
+      <div class="card">
+        <div class="card-icon">
+          <img src="images/cil_institution.png" alt="">
         </div>
+        <h3>Call-Up Information</h3>
+        <hr>
+        <p>Verify relevant service and deployment details where available.</p>
       </div>
-      <div class="industry-content">
-        <span class="badge badge-orange">REAL ESTATE & PROPERTY</span>
-        <h2>Know who you're trusting with your property.</h2>
-        <p>Help property managers, landlords, and real estate organizations make informed decisions when screening tenants, agents, and other stakeholders.</p>
-
-        <div class="benefits-title">Benefits</div>
-        <ul class="benefit-list">
-          <li>Confirm identity and address</li>
-          <li>Support tenant screening</li>
-          <li>Verify guarantors</li>
-          <li>Reduce property-related risk</li>
-        </ul>
-
-        <a href="request background check.html" class="btn btn-orange">Request a Background Check</a>
-      </div>
-    </div>
-
-    <div class="industry-row">
-      <div class="industry-image-wrapper">
-        <div class="image-backdrop">
-          <img src="images/tech-laptop.jpg" alt="Technology Workplace">
+      <div class="card">
+        <div class="card-icon">
+          <img src="images/tdesign_institution-checked (1).png" alt="">
         </div>
+        <h3>Service Year</h3>
+        <hr>
+        <p>Confirm the candidate’s stated period of national service.</p>
       </div>
-      <div class="industry-content">
-        <span class="badge badge-orange">TECHNOLOGY</span>
-        <h2>Verify professionals who secure your tech infrastructure.</h2>
-        <p>Help tech companies validate credentials, employment history, and background of engineering staff and contractors.</p>
-
-        <div class="benefits-title">Benefits</div>
-        <ul class="benefit-list">
-          <li>Reduce operational risk</li>
-          <li>Strengthen data security</li>
-          <li>Support safer recruitment</li>
-          <li>Verify professional qualifications</li>
-        </ul>
-
-        <a href="request background check.html" class="btn btn-orange">Request a Background Check</a>
-      </div>
-    </div>
-
-    <div class="industry-row reverse">
-      <div class="industry-image-wrapper">
-        <div class="image-backdrop">
-          <img src="images/hospitality-staff.jpg" alt="Hospitality Staff">
+      <div class="card">
+        <div class="card-icon">
+          <img src="images/tabler_book.png" alt="">
         </div>
+        <h3>State of Service</h3>
+        <hr>
+        <p>Check the state associated with the candidate’s service information.</p>
       </div>
-      <div class="industry-content">
-        <span class="badge badge-orange">HOSPITALITY & RETAIL</span>
-        <h2>Support responsible hiring and workforce management.</h2>
-        <p>Provide organizations with structured verification services that support recruitment, compliance, and accountability.</p>
-
-        <div class="benefits-title">Benefits</div>
-        <ul class="benefit-list">
-          <li>Establish credibility</li>
-          <li>Employment checks</li>
-          <li>Improve accountability</li>
-          <li>Secure documentation</li>
-        </ul>
-
-        <a href="request background check.html" class="btn btn-orange">Request a Background Check</a>
+      <div class="card">
+        <div class="card-icon">
+          <img src="images/griddy-icons_certificate.png" alt="">
+        </div>
+        <h3>NYSC Number</h3>
+        <hr>
+        <p>Verify the identification details provided by the applicant.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <img src="images/pinhead_book-with-square-academic-cap.png" alt="">
+        </div>
+        <h3>Candidate Information</h3>
+        <hr>
+        <p>Cross-check submitted personal details against available verification records.</p>
       </div>
     </div>
+  </section>
 
+  <!-- Why Choose NYSC Verification Section -->
+  <section class="why-nysc-section">
+    <div class="why-nysc-container">
+      
+      <!-- Left Text Content -->
+      <div class="why-nysc-content">
+        <span class="badge-custom">WHY CHOOSE NYSC VERIFICATION</span>
+        
+        <h2>Why Organizations Use NYSC Verification</h2>
+        
+        <p class="description">
+          We make NYSC verification simple and reliable, helping organizations validate candidate credentials and make informed hiring decisions with confidence.
+        </p>
+
+        <ul class="why-nysc-list">
+          <li>
+            <span class="check-icon">&#x2713;</span>
+            <span>Accurate</span>
+          </li>
+          <li>
+            <span class="check-icon">&#x2713;</span>
+            <span>Secure.</span>
+          </li>
+          <li>
+            <span class="check-icon">&#x2713;</span>
+            <span>Built for Confident Hiring.</span>
+          </li>
+          <li>
+            <span class="check-icon">&#x2713;</span>
+            <span>Efficient.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right Image Wrapper -->
+      <div class="why-nysc-image-wrapper">
+        <img src="images/nysc-graduates.png" alt="Graduates holding certificates" class="why-nysc-image">
+      </div>
+
+    </div>
   </section>
 
   <!-- ACADEMIC-STYLE FOOTER -->
@@ -677,7 +834,7 @@
           <p class="newsletter-text mb-0">Join our newsletter to stay up to date<br>on feature and releases.</p>
         </div>
         <div class="col-lg-6">
-          <form class="d-flex gap-2 justify-content-lg-end" onsubmit="event.preventDefault();">
+          <form class="d-flex gap-2 align-items-center justify-content-lg-end" onsubmit="event.preventDefault();">
             <input type="email" class="form-control newsletter-input" placeholder="youremail@gmail.com" required>
             <button type="submit" class="btn btn-newsletter">Join</button>
           </form>
@@ -706,7 +863,7 @@
         </div>
 
         <div class="col-lg-7">
-          <div class="row g-4">
+          <div class="row g-3 g-sm-4">
             <div class="col-4">
               <h6 class="footer-heading">Services</h6>
               <ul class="footer-links">
@@ -760,7 +917,7 @@
       <hr class="footer-divider mb-0">
 
       <!-- Bottom Copyright Section -->
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-4 gap-2 footer-bottom-text">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start py-4 gap-2 footer-bottom-text">
         <p class="mb-0">&copy; 2026 Klinsheet Consulting Ltd. All rights reserved</p>
         <p class="mb-0">51 Okota Rd, Inside abbey microfinance bank.</p>
       </div>
